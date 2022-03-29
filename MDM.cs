@@ -2,12 +2,12 @@
         public string DeviceInfo(string Info)
         {
             string CMD = "@echo off\nLibimobiledevice\\ideviceinfo.exe | Libimobiledevice\\grep.exe -w " + Info + " | Libimobiledevice\\awk.exe '{printf $NF}'";
-            File.WriteAllText("Config\\Info.cmd", CMD);
+            File.WriteAllText("Info.cmd", CMD);
             proceso = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = "Config\\Info.cmd",
+                    FileName = "Info.cmd",
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true,
